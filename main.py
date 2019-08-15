@@ -1,7 +1,9 @@
 import discord
 from discord.ext import commands
 
-client = commands.Bot(command_prefix="!")
+import statics.STATICS as STATICS
+
+client = commands.Bot(command_prefix=STATICS.Prefix)
 client.remove_command("help")
 
 @client.event
@@ -49,7 +51,9 @@ async def unban(ctx, *, member):
     liste = [611144116738457600, 611198940561276939]
     if any(role.id in liste for role in ctx.message.author.roles):
         banned_users = await ctx.guild.bans()
-        member=name, member_discriminator = member.split("#")
+        member_name, member_discriminator = member.split("#")
+    else:
+        return
 
     for ban_entry in banned_users:
         user = ban_entry.user
@@ -81,5 +85,6 @@ async def partner(ctx):
     embed=discord.Embed(description="Um eine Partnerschaft mit dem Discord zu haben,\n schreibe dazu bitte cNite an", title="===HowtoPartner===", colour=discord.Colour.dark_green())
 
     await ctx.send(author, embed=embed)
+
 
 client.run(STATICS.Token)
