@@ -82,4 +82,4 @@ async def partner(ctx):
 
     await ctx.send(author, embed=embed)
 
-client.run("XXXX")
+client.run(STATICS.Token)
