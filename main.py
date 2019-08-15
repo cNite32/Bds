@@ -73,4 +73,4 @@ async def help(ctx):
 
 
 
-client.run("NjA1MzczMzQ2ODEyNzg4NzM2.XVQ5JQ.82OXDZL-xMWcQt1BbXk8UtF2GFI")
+client.run("XXXX")
