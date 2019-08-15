@@ -67,10 +67,19 @@ async def help(ctx):
     )
 
     embed.set_author(name="===Help===")
-    embed.add_field(name="!clear", value="Cleares the chat", inline=False)
+    embed.add_field(name="!clear", value="Cleares the chat (nur für Supporter oder höher)", inline=False)
+    embed.add_field(name="!partner", value="Zeigt dir an wie man eine Partnerschaft bekommt", inline=False)
+    embed.add_field(name="!ban", value="bans the member from the server (nur für Supporter oder höher)", inline=False)
+    embed.add_field(name="!kick", value="kicks you from the server (nur für Supporter oder höher)", inline=False)
+
 
     await ctx.send(author, embed=embed)
 
+@client.command()
+async def partner(ctx):
+    author = ctx.message.author
+    embed=discord.Embed(description="Um eine Partnerschaft mit dem Discord zu haben,\n schreibe dazu bitte cNite an", title="===HowtoPartner===", colour=discord.Colour.dark_green())
 
+    await ctx.send(author, embed=embed)
 
 client.run("XXXX")
